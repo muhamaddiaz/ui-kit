@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { createUser } from "../actions";
 import { UserType } from "../types/user";
 
+import Card from "../components/commons/Card";
+
 interface Props {
   createUser: (user: UserType) => Promise<void>;
 }
@@ -24,6 +26,8 @@ const App: React.FC<Props> = ({ createUser }) => {
       >
         Click Me
       </button>
+      <br />
+      <Card />
     </div>
   );
 };

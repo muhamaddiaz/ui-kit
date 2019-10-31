@@ -1,10 +1,18 @@
 import React from "react";
 
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: block;
+  border-radius: 1rem;
+  background-color: red;
+`;
+
 const Card: React.FC = () => {
   return (
-    <div>
+    <Wrapper>
       <h1>Cards</h1>
-    </div>
+    </Wrapper>
   );
 };
 
