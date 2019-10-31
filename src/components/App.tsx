@@ -1,11 +1,38 @@
 import React from "react";
 
-const App: React.FC = () => {
+import { connect } from "react-redux";
+import { createUser } from "../actions";
+import { UserType } from "../types/user";
+
+interface Props {
+  createUser: (user: UserType) => Promise<void>;
+}
+
+const App: React.FC<Props> = ({ createUser }) => {
   return (
     <div>
       <h1>Hello TypeScript!</h1>
+
+      <button
+        onClick={() => {
+          createUser({
+            id: 1301164135,
+            name: "Muhamad Diaz",
+            age: 21
+          });
+        }}
+      >
+        Click Me
+      </button>
     </div>
   );
 };
 
-export default App;
+export default connect(
+  (state: any) => ({
+    users: state.users
+  }),
+  {
+    createUser
+  }
+)(App);
