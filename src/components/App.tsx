@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { createUser } from "../actions";
 import { UserType } from "../types/user";
 
-import Card from "../components/commons/Card";
+import Card from "./commons/Card/Card";
 
 interface Props {
   createUser: (user: UserType) => Promise<void>;
